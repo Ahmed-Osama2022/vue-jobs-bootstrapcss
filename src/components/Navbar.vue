@@ -1,5 +1,13 @@
 <script setup>
 // JavaScript / TypeScript code here
+console.log(title)
+
+defineProps({
+  title: {
+    type: String,
+    required: true,
+  },
+})
 </script>
 
 <template>
