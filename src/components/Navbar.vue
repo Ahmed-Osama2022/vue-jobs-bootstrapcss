@@ -1,20 +1,28 @@
 <script setup>
 // JavaScript / TypeScript code here
-console.log(title)
+import { defineProps } from 'vue'
 
-defineProps({
+const props = defineProps({
   title: {
     type: String,
     required: true,
+    default: 'Default Title',
   },
+  // name: {
+  //   type: String,
+  //   required: true,
+  //   default: 'Default name',
+  // },
 })
+console.log('Navbar component loaded with title:', props.title)
+// console.log('Navbar component loaded with name:', props.name)
 </script>
 
 <template>
   <div>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">{{ title }}</a>
         <button
           class="navbar-toggler"
           type="button"
