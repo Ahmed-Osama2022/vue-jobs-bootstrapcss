@@ -25,7 +25,7 @@ const props = defineProps({
   },
 });
 
-const cards = 3;
+// const cards = 3;
 </script>
 
 <template>

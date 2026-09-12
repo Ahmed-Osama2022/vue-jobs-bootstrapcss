@@ -16,7 +16,3 @@ defineProps({
     <slot></slot>
   </div>
 </template>
-
-<style scoped>
-/* Component scoped styles */
-</style>
