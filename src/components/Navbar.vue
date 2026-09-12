@@ -1,6 +1,7 @@
 <script setup>
 // JavaScript / TypeScript code here
 import { defineProps } from 'vue';
+import { useRoute } from 'vue-router';
 
 const props = defineProps({
   title: {
@@ -16,6 +17,18 @@ const props = defineProps({
 });
 console.log('Navbar component loaded with title:', props.title);
 // console.log('Navbar component loaded with name:', props.name)
+
+const isActiveClass = 'bg-success text-white p-2 rounded-3 opacity-75';
+/**
+ * To use the Active link
+ */
+// console.log(useRoute().path); // TEST:
+
+const isActiveLink = (routePath) => {
+  const route = useRoute();
+  // console.log(typeof routePath, typeof route.path); // TEST:
+  return route.path === routePath;
+};
 </script>
 
 <template>
@@ -37,21 +50,38 @@ console.log('Navbar component loaded with title:', props.title);
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <RouterLink class="nav-link active" aria-current="page" to="/">Home</RouterLink>
+              <RouterLink
+                :class="[
+                  isActiveLink('/')
+                    ? `nav-link dropdown-toggle ${isActiveClass}`
+                    : 'nav-link dropdown-toggle',
+                ]"
+                aria-current="page"
+                to="/"
+                >Home</RouterLink
+              >
             </li>
             <li class="nav-item">
-              <RouterLink class="nav-link" to="/test">Test</RouterLink>
+              <RouterLink
+                :class="[
+                  isActiveLink('/test')
+                    ? `nav-link dropdown-toggle ${isActiveClass}`
+                    : 'nav-link dropdown-toggle',
+                ]"
+                to="/test"
+                >Test</RouterLink
+              >
             </li>
             <li class="nav-item dropdown">
-              <a
+              <RouterLink
                 class="nav-link dropdown-toggle"
-                href="#"
+                to="#"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 Dropdown
-              </a>
+              </RouterLink>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Action</a></li>
                 <li><a class="dropdown-item" href="#">Another action</a></li>
