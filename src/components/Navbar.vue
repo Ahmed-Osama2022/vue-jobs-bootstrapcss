@@ -1,6 +1,6 @@
 <script setup>
 // JavaScript / TypeScript code here
-import { defineProps } from 'vue'
+import { defineProps } from 'vue';
 
 const props = defineProps({
   title: {
@@ -13,8 +13,8 @@ const props = defineProps({
   //   required: true,
   //   default: 'Default name',
   // },
-})
-console.log('Navbar component loaded with title:', props.title)
+});
+console.log('Navbar component loaded with title:', props.title);
 // console.log('Navbar component loaded with name:', props.name)
 </script>
 
@@ -37,10 +37,10 @@ console.log('Navbar component loaded with title:', props.title)
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <RouterLink class="nav-link active" aria-current="page" to="/">Home</RouterLink>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <RouterLink class="nav-link" to="/test">Test</RouterLink>
             </li>
             <li class="nav-item dropdown">
               <a
