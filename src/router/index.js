@@ -1,4 +1,5 @@
 import HomeView from '@/views/HomeView.vue';
+import NotFoundView from '@/views/NotFoundView.vue';
 import Test from '@/views/Test.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
@@ -18,6 +19,11 @@ const router = createRouter({
       path: '/test',
       name: 'test',
       component: Test,
+    },
+    {
+      path: '/:catchAll(.*)*',
+      name: 'not-found',
+      component: NotFoundView,
     },
   ],
 });
