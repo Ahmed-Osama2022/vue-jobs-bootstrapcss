@@ -3,31 +3,34 @@ import Card from '@/components/card.vue';
 import ParentComponent from '@/components/ParentComponent.vue';
 import logoImage from '@/assets/logo.svg';
 
+// impoert this from .env variables
+const websiteLink = import.meta.env.VITE_WEBSITE_LINK;
+
 // Dummy data for cards
 const cards = [
   {
     title: 'Card 1',
     text: 'This is the text for Card 1',
     buttonText: 'Learn More',
-    cardButtonLink: 'https://example.com/card1',
+    cardButtonLink: '/card1',
   },
   {
     title: 'Card 2',
     text: 'This is the text for Card 2',
     buttonText: 'Learn More',
-    cardButtonLink: 'https://example.com/card2',
+    cardButtonLink: '/card2',
   },
   {
     title: 'Card 3',
     text: 'This is the text for Card 3',
     buttonText: 'Learn More',
-    cardButtonLink: 'https://example.com/card3',
+    cardButtonLink: '/card3',
   },
   {
     title: 'Card 4',
     text: 'This is the text for Card 4',
     buttonText: 'Learn More',
-    // cardButtonLink: 'https://example.com/card4',
+    cardButtonLink: '/card4',
   },
 ];
 </script>

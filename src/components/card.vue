@@ -1,6 +1,7 @@
 <script setup>
 // JavaScript / TypeScript code here
 import image from '../assets/logo.svg';
+import { RouterLink } from 'vue-router';
 
 const props = defineProps({
   cardTitle: {
@@ -38,7 +39,7 @@ const props = defineProps({
       <p class="card-text">
         {{ cardText }}
       </p>
-      <a :href="cardButtonLink" class="btn btn-primary">{{ cardButtonText }}</a>
+      <RouterLink :to="cardButtonLink" class="btn btn-primary">{{ cardButtonText }}</RouterLink>
     </div>
   </div>
 </template>
