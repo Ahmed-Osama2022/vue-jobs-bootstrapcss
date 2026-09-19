@@ -5,6 +5,7 @@ import NotFoundView from '@/views/NotFoundView.vue';
 import Test from '@/views/Test.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 import JobsView from '@/views/Jobs/JobsView.vue';
+import AddJobView from '@/views/Jobs/AddJobView.vue';
 
 /**
  * Decalre the routes
@@ -46,6 +47,11 @@ const router = createRouter({
       path: '/jobs/:id(\\d+)', // This will only match numeric IDs
       name: 'job',
       component: JobView,
+    },
+    {
+      path: '/jobs/add', // This will only match numeric IDs
+      name: 'add-job',
+      component: AddJobView,
     },
   ],
 });
