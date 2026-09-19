@@ -12,25 +12,25 @@ const cards = [
     title: 'Card 1',
     text: 'This is the text for Card 1',
     buttonText: 'Learn More',
-    cardButtonLink: '/card1',
+    cardButtonLink: '/card/1',
   },
   {
     title: 'Card 2',
     text: 'This is the text for Card 2',
     buttonText: 'Learn More',
-    cardButtonLink: '/card2',
+    cardButtonLink: '/card/2',
   },
   {
     title: 'Card 3',
     text: 'This is the text for Card 3',
     buttonText: 'Learn More',
-    cardButtonLink: '/card3',
+    cardButtonLink: '/card/3',
   },
   {
     title: 'Card 4',
     text: 'This is the text for Card 4',
     buttonText: 'Learn More',
-    cardButtonLink: '/card4',
+    cardButtonLink: '/card/4',
   },
 ];
 </script>

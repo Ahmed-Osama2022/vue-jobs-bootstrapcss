@@ -1,3 +1,4 @@
+import CardView from '@/components/CardView.vue';
 import HomeView from '@/views/HomeView.vue';
 import NotFoundView from '@/views/NotFoundView.vue';
 import Test from '@/views/Test.vue';
@@ -19,6 +20,11 @@ const router = createRouter({
       path: '/test',
       name: 'test',
       component: Test,
+    },
+    {
+      path: '/card/:id',
+      name: 'card',
+      component: CardView,
     },
     {
       path: '/:catchAll(.*)*',
