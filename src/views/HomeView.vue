@@ -1,5 +1,5 @@
 <script setup>
-import Card from '@/components/card.vue';
+import Card from '@/components/Card.vue';
 import ParentComponent from '@/components/ParentComponent.vue';
 import logoImage from '@/assets/logo.svg';
 

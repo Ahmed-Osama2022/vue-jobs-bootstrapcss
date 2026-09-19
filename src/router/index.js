@@ -1,4 +1,6 @@
 import CardView from '@/components/CardView.vue';
+import Jobs from '@/components/Jobs/Jobs.vue';
+import JobView from '@/components/Jobs/JobView.vue';
 import HomeView from '@/views/HomeView.vue';
 import NotFoundView from '@/views/NotFoundView.vue';
 import Test from '@/views/Test.vue';
@@ -30,6 +32,20 @@ const router = createRouter({
       path: '/:catchAll(.*)*',
       name: 'not-found',
       component: NotFoundView,
+    },
+    /**
+     * For the jobs
+     */
+    {
+      path: '/jobs',
+      name: 'jobs',
+      component: Jobs,
+    },
+    {
+      // path: '/jobs/:id',
+      path: '/jobs/:id(\\d+)', // This will only match numeric IDs
+      name: 'job',
+      component: JobView,
     },
   ],
 });

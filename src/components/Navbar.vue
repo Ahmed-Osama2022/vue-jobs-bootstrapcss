@@ -51,25 +51,26 @@ const isActiveLink = (routePath) => {
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <RouterLink
-                :class="[
-                  isActiveLink('/')
-                    ? `nav-link dropdown-toggle ${isActiveClass}`
-                    : 'nav-link dropdown-toggle',
-                ]"
+                :class="[isActiveLink('/') ? `nav-link  ${isActiveClass}` : 'nav-link ']"
                 aria-current="page"
                 to="/"
                 >Home</RouterLink
               >
             </li>
+
             <li class="nav-item">
               <RouterLink
-                :class="[
-                  isActiveLink('/test')
-                    ? `nav-link dropdown-toggle ${isActiveClass}`
-                    : 'nav-link dropdown-toggle',
-                ]"
+                :class="[isActiveLink('/test') ? `nav-link  ${isActiveClass}` : 'nav-link ']"
                 to="/test"
                 >Test</RouterLink
+              >
+            </li>
+
+            <li class="nav-item">
+              <RouterLink
+                :class="[isActiveLink('/jobs') ? `nav-link  ${isActiveClass}` : 'nav-link ']"
+                to="/jobs"
+                >Jobs</RouterLink
               >
             </li>
             <li class="nav-item dropdown">
@@ -84,11 +85,15 @@ const isActiveLink = (routePath) => {
               </RouterLink>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Action</a></li>
+
                 <li><a class="dropdown-item" href="#">Another action</a></li>
+
                 <li><hr class="dropdown-divider" /></li>
+
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
               </ul>
             </li>
+
             <li class="nav-item">
               <a class="nav-link disabled" aria-disabled="true">Disabled</a>
             </li>

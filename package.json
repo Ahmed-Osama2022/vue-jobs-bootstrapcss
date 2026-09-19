@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "server": "json-server --watch src/database/db.json --port 8200",
     "format": "prettier --write --experimental-cli src/"
   },
   "dependencies": {
