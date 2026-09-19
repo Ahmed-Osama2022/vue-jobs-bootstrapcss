@@ -60,7 +60,7 @@ watch(
       {{ job ? `Job Title: ${job.title}` : 'Loading job details...' }}
     </p> -->
 
-    <div class="card">
+    <div v-if="isExists" class="card">
       <div class="card-body">
         <h5 class="card-title">{{ job?.title }}</h5>
         <p class="card-text"><strong>Type:</strong> {{ job?.type }}</p>
