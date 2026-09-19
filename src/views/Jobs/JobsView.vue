@@ -27,13 +27,11 @@ onMounted(async () => {
 
 <template>
   <div class="mt-3 mx-2">
-    <div class="d-flex flex-row px-3 pt-3 align-content-center">
-      <h3>
-        All Jobs
-        <span class="badge ms-2 mb-1 bg-success"
-          ><strong>Count: </strong> {{ state.jobs.length }}</span
-        >
-      </h3>
+    <div class="d-flex flex-row px-3 pt-3 align-items-center">
+      <h3>All Jobs</h3>
+      <div class="badge ms-3 bg-success fs-5">
+        <strong>Count: {{ state.jobs.length }}</strong>
+      </div>
 
       <RouterLink :to="{ name: 'add-job' }" type="button" class="ms-auto btn btn-outline-success"
         >Add Job</RouterLink
