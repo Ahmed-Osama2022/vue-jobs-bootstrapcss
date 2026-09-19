@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "server": "json-server --watch src/database/db.json --port 8200",
-    "format": "prettier --write --experimental-cli src/"
+    "format": "prettier --write --experimental-cli src/",
+    "serverPHP": "php /home/ahmed/laravel-apps/laravel-api/artisan serve --port 8500"
   },
   "dependencies": {
     "axios": "^1.20.0",
@@ -16,7 +17,8 @@
     "primeicons": "^8.0.1",
     "sass": "^1.104.0",
     "vue": "^3.5.40",
-    "vue-router": "^5.3.1"
+    "vue-router": "^5.3.1",
+    "vue-spinner": "^3.0.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.8",
