@@ -2,6 +2,8 @@
 import { reactive } from 'vue';
 // import { defineEmits } from 'vue';
 import logoImage from '@/assets/logo.svg';
+import axios from 'axios';
+import { useRouter } from 'vue-router';
 
 const job = reactive({
   type: 'Full-Time',
@@ -17,6 +19,7 @@ const job = reactive({
   },
 });
 
+const router = useRouter();
 // const emit = defineEmits(['job-added']);
 
 // function handleSubmit() {
@@ -29,6 +32,7 @@ const handleSubmit = async () => {
   // console.log('New job submitted:', { ...job });
 
   const newJob = {
+    title: job.title,
     type: job.type,
     name: job.name,
     description: job.description,
@@ -41,7 +45,20 @@ const handleSubmit = async () => {
       contactPhone: job.company.contactPhone,
     },
   };
-  console.log('New job submitted:', newJob);
+  console.log('New job submitted:', newJob); // TEST:
+
+  // Api call to submit the job data to the backend (Add the job to the database)
+  try {
+    const response = await axios.post(import.meta.env.VITE_API_URL + '/jobs', newJob);
+    console.log('Job added successfully:', response.data);
+
+    // @todo - hsow taost notification for success
+    // console.log(response.data.id); // TEST:
+    router.push(`/jobs/${response.data.id}`); // Navigate to the newjob page after successful submission
+    // Optionally, you can reset the form or navigate to another page
+  } catch (error) {
+    console.error('Error adding job:', error);
+  }
 };
 
 // Loop for the options
@@ -94,6 +111,19 @@ const options = ['Full-Time', 'Part-Time', 'Remote', 'Internship'];
                 <h2 class="text-center fw-semibold mb-4">Add Job</h2>
 
                 <form @submit.prevent="handleSubmit">
+                  <!-- Job title -->
+                  <div class="mb-3">
+                    <label for="title" class="form-label fw-bold">Job Title</label>
+                    <input
+                      id="title"
+                      v-model="job.title"
+                      type="text"
+                      class="form-control"
+                      placeholder="eg. Senior Vue Developer"
+                      required
+                    />
+                  </div>
+
                   <div class="mb-3">
                     <label for="type" class="form-label fw-bold">Job Type</label>
                     <select id="type" v-model="job.type" class="form-select" required>
@@ -173,9 +203,7 @@ const options = ['Full-Time', 'Part-Time', 'Remote', 'Internship'];
                   </div>
 
                   <div class="mb-3">
-                    <label for="company_description" class="form-label fw-bold"
-                      >Company Description</label
-                    >
+                    <label for="company_description" class="form-label fw-bold">Company Description</label>
                     <textarea
                       id="company_description"
                       v-model="job.company.description"

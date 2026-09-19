@@ -43,8 +43,8 @@ const router = createRouter({
       component: JobsView,
     },
     {
-      // path: '/jobs/:id',
-      path: '/jobs/:id(\\d+)', // This will only match numeric IDs
+      path: '/jobs/:id',
+      // path: '/jobs/:id(\\d+)', // This will only match numeric IDs
       name: 'job',
       component: JobView,
     },

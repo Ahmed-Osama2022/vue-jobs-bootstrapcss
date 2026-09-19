@@ -34,7 +34,7 @@ onMounted(async () => {
       </div>
 
       <RouterLink :to="{ name: 'add-job' }" type="button" class="ms-auto btn btn-outline-success"
-        >Add Job</RouterLink
+        >Add Job <strong>+</strong></RouterLink
       >
     </div>
     <!-- <p v-if="state.isLoading" class="text-center">Loading jobs...</p> -->

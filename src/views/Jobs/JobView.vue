@@ -50,9 +50,9 @@ watch(
 
 <template>
   <div class="px-3">
-    <h3>Jobs View</h3>
+    <h3>Job View</h3>
 
-    <p>{{ isExists ? `Job ID: ${job?.id}` : 'Job Not Found' }}</p>
+    <p class="badge my-2 bg-success fs-6">{{ isExists ? `Job ID: ${job?.id}` : 'Job Not Found' }}</p>
 
     <p v-if="!isExists"><span class="fw-bold me-1">Redirecting</span> to jobs list...</p>
 
@@ -62,18 +62,16 @@ watch(
 
     <div v-if="isExists" class="card">
       <div class="card-body">
-        <h5 class="card-title">{{ job?.title }}</h5>
+        <h5 class="card-title"><strong>Title:</strong> {{ job?.title }}</h5>
         <p class="card-text"><strong>Type:</strong> {{ job?.type }}</p>
         <p class="card-text"><strong>Location:</strong> {{ job?.location }}</p>
-        <p class="card-text">{{ job?.description }}</p>
+        <p class="card-text"><strong>Description:</strong> {{ job?.description }}</p>
         <p class="card-text"><strong>Salary:</strong> {{ job?.salary }}</p>
         <p class="card-text"><strong>Company:</strong> {{ job?.company.name }}</p>
       </div>
     </div>
 
-    <RouterLink v-if="isExists" :to="{ name: 'jobs' }" class="btn btn-success my-3"
-      >Back to Jobs List</RouterLink
-    >
+    <RouterLink v-if="isExists" :to="{ name: 'jobs' }" class="btn btn-success my-3">Back to Jobs List</RouterLink>
   </div>
 </template>
 
