@@ -1,10 +1,10 @@
-import CardView from '@/components/CardView.vue';
-import Jobs from '@/components/Jobs/Jobs.vue';
-import JobView from '@/components/Jobs/JobView.vue';
+import CardView from '@/views/CardView.vue';
+import JobView from '@/views/Jobs/JobView.vue';
 import HomeView from '@/views/HomeView.vue';
 import NotFoundView from '@/views/NotFoundView.vue';
 import Test from '@/views/Test.vue';
 import { createRouter, createWebHistory } from 'vue-router';
+import JobsView from '@/views/Jobs/JobsView.vue';
 
 /**
  * Decalre the routes
@@ -39,7 +39,7 @@ const router = createRouter({
     {
       path: '/jobs',
       name: 'jobs',
-      component: Jobs,
+      component: JobsView,
     },
     {
       // path: '/jobs/:id',

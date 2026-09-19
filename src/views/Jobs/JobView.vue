@@ -54,7 +54,7 @@ watch(
 
     <p>{{ isExists ? `Job ID: ${job?.id}` : 'Job Not Found' }}</p>
 
-    <p v-if="!isExists">Redirecting to jobs list...</p>
+    <p v-if="!isExists"><span class="fw-bold me-1">Redirecting</span> to jobs list...</p>
 
     <!-- <p class="my-5">
       {{ job ? `Job Title: ${job.title}` : 'Loading job details...' }}
