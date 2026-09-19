@@ -83,36 +83,6 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
-    },
-    {
-      "title": "Tempore aut adipisc",
-      "type": "Internship",
-      "name": "Ignatius Sanford",
-      "description": "Repellendus Laudant",
-      "salary": "$100K - $125K",
-      "location": "Omnis reprehenderit ",
-      "company": {
-        "name": "Love and Lamb Inc",
-        "description": "Est tempore dolorem",
-        "contactEmail": "babef@mailinator.com",
-        "contactPhone": "+1 (213) 302-8157"
-      },
-      "id": "fxzzSjq"
-    },
-    {
-      "title": "Perspiciatis lorem ",
-      "type": "Internship",
-      "name": "Macey Sharp",
-      "description": "Vel modi consequuntu",
-      "salary": "$90K - $100K",
-      "location": "Autem nobis illum i",
-      "company": {
-        "name": "Walls Lee Co",
-        "description": "Aute iusto tenetur d",
-        "contactEmail": "dizuberu@mailinator.com",
-        "contactPhone": "+1 (511) 519-3125"
-      },
-      "id": "CcOmIL3"
     }
   ]
 }

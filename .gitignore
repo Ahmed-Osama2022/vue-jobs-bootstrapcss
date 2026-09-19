@@ -43,3 +43,6 @@ __screenshots__/
 
 .study-log
 notes/*
+
+# Database files
+src/database/db.json
