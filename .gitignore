@@ -40,3 +40,6 @@ __screenshots__/
 
 # Envoironment variables
 .env
+
+.study-log
+notes/*

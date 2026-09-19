@@ -1,6 +1,6 @@
 <script setup>
 import { reactive } from 'vue';
-import { defineEmits } from 'vue';
+// import { defineEmits } from 'vue';
 import logoImage from '@/assets/logo.svg';
 
 const job = reactive({
@@ -17,7 +17,7 @@ const job = reactive({
   },
 });
 
-const emit = defineEmits(['job-added']);
+// const emit = defineEmits(['job-added']);
 
 // function handleSubmit() {
 //   // Replace with your API call / store action
@@ -25,9 +25,23 @@ const emit = defineEmits(['job-added']);
 //   emit('job-added', { ...job });
 // }
 
-const handleSubmit = () => {
-  console.log('New job submitted:', { ...job });
-  // emit('job-added', { ...job });
+const handleSubmit = async () => {
+  // console.log('New job submitted:', { ...job });
+
+  const newJob = {
+    type: job.type,
+    name: job.name,
+    description: job.description,
+    salary: job.salary,
+    location: job.location,
+    company: {
+      name: job.company.name,
+      description: job.company.description,
+      contactEmail: job.company.contactEmail,
+      contactPhone: job.company.contactPhone,
+    },
+  };
+  console.log('New job submitted:', newJob);
 };
 
 // Loop for the options
