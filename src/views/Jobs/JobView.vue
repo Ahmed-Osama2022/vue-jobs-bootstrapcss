@@ -51,10 +51,15 @@ watch(
 <template>
   <div class="px-3">
     <h3>Job View</h3>
-
-    <p class="badge my-2 bg-success fs-6">{{ isExists ? `Job ID: ${job?.id}` : 'Job Not Found' }}</p>
-
-    <p v-if="!isExists"><span class="fw-bold me-1">Redirecting</span> to jobs list...</p>
+    <div class="mb-3 d-flex flex-row justify-content-between gap-2 align-items-center">
+      <p class="badge my-2 bg-success fs-6">{{ isExists ? `Job ID: ${job?.id}` : 'Job Not Found' }}</p>
+      <RouterLink
+        v-if="isExists"
+        :to="{ name: 'edit-job', params: { id: job?.id } }"
+        class="btn btn-outline-success"
+        >Edit Job</RouterLink
+      >
+    </div>
 
     <!-- <p class="my-5">
       {{ job ? `Job Title: ${job.title}` : 'Loading job details...' }}
