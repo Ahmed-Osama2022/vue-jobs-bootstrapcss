@@ -23,6 +23,15 @@ onMounted(async () => {
     state.isLoading = false;
   }
 });
+
+const deleteJob = async (jobId) => {
+  try {
+    await axios.delete(`${import.meta.env.VITE_API_URL}/jobs/${jobId}`);
+    state.jobs = state.jobs.filter((job) => job.id !== jobId);
+  } catch (error) {
+    console.error('Error deleting job:', error);
+  }
+};
 </script>
 
 <template>
@@ -43,8 +52,11 @@ onMounted(async () => {
     </p>
 
     <ul v-else>
-      <li v-for="job in state.jobs" :key="job.id">
+      <li class="d-flex align-content-center gap-2" v-for="job in state.jobs" :key="job.id">
         <RouterLink :to="`/jobs/${job.id}`"> {{ job.title }} - {{ job.type }} </RouterLink>
+        <span class="delete-btn fs-3 text-danger ms-2" @click="deleteJob(job.id)">
+          <i class="pi pi-times-circle"></i>
+        </span>
       </li>
     </ul>
   </div>
@@ -52,4 +64,11 @@ onMounted(async () => {
 
 <style scoped>
 /* Component scoped styles */
+.delete-btn {
+  cursor: pointer;
+  transition: 0.1s all ease-in-out;
+}
+.delete-btn:active {
+  transform: scale(0.9);
+}
 </style>
