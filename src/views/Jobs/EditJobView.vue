@@ -59,7 +59,7 @@ onMounted(async () => {
 
 const handleSubmit = async () => {
   // console.log('New job submitted:', { ...job });
-  const newJob = {
+  const updatedJob = {
     title: form.title,
     type: form.type,
     name: form.name,
@@ -73,11 +73,11 @@ const handleSubmit = async () => {
       contactPhone: form.company.contactPhone,
     },
   };
-  console.log('New job submitted:', newJob); // TEST:
+  console.log('New job submitted:', updatedJob); // TEST:
 
   // Api call to submit the job data to the backend (Add the job to the database)
   try {
-    const response = await axios.patch(import.meta.env.VITE_API_URL + '/jobs/' + jobId, newJob);
+    const response = await axios.patch(import.meta.env.VITE_API_URL + '/jobs/' + jobId, updatedJob);
     console.log('Job updated successfully:', response.data);
 
     // TODO: - show toast notification for success
