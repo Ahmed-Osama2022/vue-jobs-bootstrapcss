@@ -4,6 +4,7 @@ import { reactive } from 'vue';
 import logoImage from '@/assets/logo.svg';
 import axios from 'axios';
 import { useRouter } from 'vue-router';
+import { useToast } from 'vue-toastification';
 
 const job = reactive({
   type: 'Full-Time',
@@ -20,6 +21,7 @@ const job = reactive({
 });
 
 const router = useRouter();
+const toast = useToast();
 // const emit = defineEmits(['job-added']);
 
 // function handleSubmit() {
@@ -52,11 +54,13 @@ const handleSubmit = async () => {
     const response = await axios.post(import.meta.env.VITE_API_URL + '/jobs', newJob);
     console.log('Job added successfully:', response.data);
 
-    // @todo - hsow taost notification for success
+    // TODO: - show toast notification for success
     // console.log(response.data.id); // TEST:
     router.push(`/jobs/${response.data.id}`); // Navigate to the newjob page after successful submission
+    toast.success('Job added successfully!');
     // Optionally, you can reset the form or navigate to another page
   } catch (error) {
+    toast.error('Error was not added!');
     console.error('Error adding job:', error);
   }
 };
