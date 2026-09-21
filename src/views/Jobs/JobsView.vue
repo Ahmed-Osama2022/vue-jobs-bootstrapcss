@@ -4,8 +4,10 @@ import { ref, onMounted, reactive } from 'vue';
 import { RouterLink } from 'vue-router';
 import axios from 'axios';
 import { PulseLoader } from 'vue-spinner';
+import { useToast } from 'vue-toastification';
 
 // const jobs = ref([]);
+const toast = useToast();
 
 const state = reactive({
   jobs: [],
@@ -28,7 +30,9 @@ const deleteJob = async (jobId) => {
   try {
     await axios.delete(`${import.meta.env.VITE_API_URL}/jobs/${jobId}`);
     state.jobs = state.jobs.filter((job) => job.id !== jobId);
+    toast.warning('Job deleted successfully!');
   } catch (error) {
+    toast.error('Job was not deleted!');
     console.error('Error deleting job:', error);
   }
 };

@@ -60,7 +60,7 @@ const handleSubmit = async () => {
     toast.success('Job added successfully!');
     // Optionally, you can reset the form or navigate to another page
   } catch (error) {
-    toast.error('Error was not added!');
+    toast.error('Job was not added!');
     console.error('Error adding job:', error);
   }
 };
